@@ -10,10 +10,12 @@ const Todo = () => {
   const [todoList, setTodoList] = useState([]);
   const access_token = localStorage.getItem('access_token');
 
+  if (!access_token) navigate('/');
+
   useEffect(() => {
     if (!access_token) {
-      alert('로그아웃 상태입니다. 다시 로그인 해주세요.');
       navigate('/');
+      alert('로그아웃 상태입니다. 다시 로그인 해주세요.');
     } else {
       fetchData('/todos', access_token, 'GET').then(data => {
         setTodoList([...data].map(list => ({ ...list, modify: false })));
