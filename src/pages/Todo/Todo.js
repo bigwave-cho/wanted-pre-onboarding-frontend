@@ -11,14 +11,14 @@ const Todo = () => {
   const access_token = localStorage.getItem('access_token');
 
   useEffect(() => {
-    if (!localStorage.getItem('access_token')) {
+    if (!access_token) {
       alert('로그인 토큰이 만료되었습니다.');
       navigate('/');
+    } else {
+      fetchData('/todos', access_token, 'GET').then(data => {
+        setTodoList([...data].map(list => ({ ...list, modify: false })));
+      });
     }
-
-    fetchData('/todos', access_token, 'GET').then(data => {
-      setTodoList([...data].map(list => ({ ...list, modify: false })));
-    });
 
     //eslint-disable-next-line
   }, [access_token]);
