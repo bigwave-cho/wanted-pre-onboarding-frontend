@@ -12,7 +12,7 @@ const Todo = () => {
 
   useEffect(() => {
     if (!access_token) {
-      alert('로그인 토큰이 만료되었습니다.');
+      alert('로그아웃 상태입니다. 다시 로그인 해주세요.');
       navigate('/');
     } else {
       fetchData('/todos', access_token, 'GET').then(data => {
