@@ -3,3 +3,8 @@ from = "/proxy/*"
   to = "https://pre-onboarding-selection-task.shop/:splat"  
   status = 200
   force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
