@@ -5,7 +5,7 @@
 
 ## ⭐️ 로그인 , 회원가입
 
-[![예제](https://youtu.be/xe-nry29y70/0.jpg)](https://youtu.be/xe-nry29y70)  // 업로드 완료 되면 주소 교체
+[![시연영상 유튜브 링크](https://youtu.be/xe-nry29y70/0.jpg)](https://youtu.be/xe-nry29y70) 
 
 ✅ Assignment1
 
