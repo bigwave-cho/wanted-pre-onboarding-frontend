@@ -47,7 +47,7 @@ const TodoLists = ({ todoList, setTodoList }) => {
     let index = todoList.findIndex(
       v => v.id * 1 === e.target.dataset.index * 1
     );
-    console.log(id, index);
+
     fetchData(`/todos/${id}`, access_token, 'PUT', {
       todo: todoList[index].todo,
       isCompleted: todoList[index].isCompleted,
@@ -65,7 +65,7 @@ const TodoLists = ({ todoList, setTodoList }) => {
 
   return (
     <TodoListWrapper>
-      {todoList.map(list => {
+      {todoList.map((list, i) => {
         return (
           <TodoList iscompleted={String(list.isCompleted)} key={list.id}>
             {!list.modify ? (
@@ -74,7 +74,11 @@ const TodoLists = ({ todoList, setTodoList }) => {
                   iscompleted={String(list.isCompleted)}
                   className="todoContent"
                 >
-                  {list.todo}
+                  {list.isCompleted ? (
+                    ` ☑️ ${list.todo}`
+                  ) : (
+                    <span> ⬜️ {list.todo}</span>
+                  )}
                 </div>
                 <div className="modifyControl">
                   <button data-index={list.id} onClick={handleToggle}>
@@ -144,8 +148,7 @@ const ModifyContent = styled.div`
 
       font-family: 'Jua', sans-serif;
       font-size: 15px;
-      text-decoration: ${props =>
-        props.iscompleted === 'true' && 'line-through'};
+
       color: ${props => props.iscompleted === 'true' && 'gray'};
     }
 
@@ -191,9 +194,10 @@ const TodoContent = styled.div`
   font-size: 18px;
 
   .todoContent {
+    position: relative;
     width: 700px;
     padding-left: 10px;
-    text-decoration: ${props => props.iscompleted === 'true' && 'line-through'};
+
     color: ${props => props.iscompleted === 'true' && 'gray'};
   }
 

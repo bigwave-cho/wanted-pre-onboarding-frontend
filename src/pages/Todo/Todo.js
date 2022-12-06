@@ -7,9 +7,7 @@ import fetchData from '../../api/fetchData';
 
 const Todo = () => {
   const navigate = useNavigate();
-
   const [todoList, setTodoList] = useState([]);
-
   const access_token = localStorage.getItem('access_token');
 
   useEffect(() => {
@@ -23,15 +21,27 @@ const Todo = () => {
     });
 
     //eslint-disable-next-line
-  }, []);
+  }, [access_token]);
+
+  const doLogout = () => {
+    localStorage.removeItem('access_token');
+    window.location.reload();
+  };
 
   return (
     <TodoContainer>
       <TodoWrapper>
         <Title>
-          <span>Todo List</span>
+          <span>To Do List</span>
+          <button
+            onClick={() => {
+              doLogout();
+            }}
+          >
+            로그아웃
+          </button>
         </Title>
-        <AddTodo getTodoList={``} setTodoList={setTodoList}></AddTodo>
+        <AddTodo setTodoList={setTodoList}></AddTodo>
         <TodoLists setTodoList={setTodoList} todoList={todoList}></TodoLists>
       </TodoWrapper>
     </TodoContainer>
@@ -39,11 +49,28 @@ const Todo = () => {
 };
 
 const Title = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 0px 0px 10px 0px;
   width: 100%;
   border-bottom: 3px solid black;
   font-size: 60px;
   font-family: 'Jua', sans-serif;
+
+  button {
+    width: 90px;
+    height: 40px;
+    border: 1px solid lightgray;
+
+    font-family: 'Jua', sans-serif;
+    font-size: 17px;
+
+    &:hover {
+      color: blue;
+    }
+  }
 `;
 
 const TodoWrapper = styled.div`

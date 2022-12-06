@@ -41,8 +41,8 @@ const Login = () => {
           alert('이메일 & 비밀번호를 확인해주세요.');
           setInputValue(prev => ({ ...prev, password: '' }));
         }
+
         if (res.access_token) {
-          alert('로그인 성공!');
           localStorage.setItem('access_token', res.access_token);
           navigate('/todo');
         }
@@ -54,7 +54,7 @@ const Login = () => {
     <LoginContainer>
       <LoginForm onSubmit={handleSubmit}>
         <LoginTitle>
-          <div className="title">로그인 & 회원가입</div>
+          <div className="title">회원가입 & 로그인</div>
         </LoginTitle>
         <InputBox
           setInputValue={setInputValue}

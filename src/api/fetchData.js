@@ -2,7 +2,6 @@ const PROXY = window.location.hostname === 'localhost' ? '' : '/proxy';
 
 const fetchData = (url, access_token, method, data) => {
   const URL = `${PROXY}${url}`;
-  console.log(URL);
   //로그인&회원가입
 
   const postLoginResult = async () => {
