@@ -147,7 +147,6 @@ const ModifyContent = styled.div`
 
       font-family: 'Jua', sans-serif;
       font-size: 15px;
-
       color: ${props => props.iscompleted === 'true' && 'gray'};
     }
 
