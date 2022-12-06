@@ -35,6 +35,7 @@ const TodoLists = ({ todoList, setTodoList }) => {
     );
 
     if (e.target.id === 'cancelBtn') {
+      console.log('hi');
       fetchData('/todos', access_token, 'GET').then(data => {
         setTodoList([...data].map(list => ({ ...list, modify: false })));
       });
@@ -46,7 +47,7 @@ const TodoLists = ({ todoList, setTodoList }) => {
     let index = todoList.findIndex(
       v => v.id * 1 === e.target.dataset.index * 1
     );
-
+    console.log(id, index);
     fetchData(`/todos/${id}`, access_token, 'PUT', {
       todo: todoList[index].todo,
       isCompleted: todoList[index].isCompleted,

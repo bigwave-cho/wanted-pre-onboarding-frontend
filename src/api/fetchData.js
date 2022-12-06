@@ -4,6 +4,7 @@ const fetchData = (url, access_token, method, data) => {
     const response = await fetch(url, {
       method: method,
       headers: {
+        'Access-Control-Allow-Origin': '*',
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
@@ -21,6 +22,7 @@ const fetchData = (url, access_token, method, data) => {
     const response = await fetch(url, {
       method: method,
       headers: {
+        'Access-Control-Allow-Origin': '*',
         Authorization: `Bearer ${access_token}`,
       },
     });
@@ -35,6 +37,7 @@ const fetchData = (url, access_token, method, data) => {
     const response = await fetch(url, {
       method: method,
       headers: {
+        'Access-Control-Allow-Origin': '*',
         Authorization: `Bearer ${access_token}`,
         'Content-Type': 'application/json',
       },
@@ -49,7 +52,8 @@ const fetchData = (url, access_token, method, data) => {
   if ((url === '/todos' && method === 'GET') || method === 'DELETE') {
     return getTodoList();
   }
-  if (url === '/todos' && method === 'POST') return addTodos();
+  if ((url === '/todos' && method === 'POST') || method === 'PUT')
+    return addTodos();
 };
 
 export default fetchData;
