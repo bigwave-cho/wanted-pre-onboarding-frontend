@@ -1,6 +1,6 @@
 [[redirects]]
   from = "/proxy/*"
-  to = "https://wantedtodoapp.netlify.app/:splat"
+  to = ""https://pre-onboarding-selection-task.shop/:splat"
   status = 200
   force = true
 
