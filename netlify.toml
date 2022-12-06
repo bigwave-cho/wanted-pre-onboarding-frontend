@@ -6,7 +6,7 @@
 
 [[redirects]]
   from = "/api/*"
-  to = "https://api.openweathermap.org/data/2.5/group:splat"
+  to = "https://pre-onboarding-selection-task.shop/:splat"
   status = 200
   force = true
 
