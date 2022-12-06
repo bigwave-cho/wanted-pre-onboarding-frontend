@@ -10,8 +10,6 @@ const Todo = () => {
   const [todoList, setTodoList] = useState([]);
   const access_token = localStorage.getItem('access_token');
 
-  if (!access_token) navigate('/');
-
   useEffect(() => {
     if (!access_token) {
       navigate('/');
