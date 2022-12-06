@@ -35,7 +35,6 @@ const TodoLists = ({ todoList, setTodoList }) => {
     );
 
     if (e.target.id === 'cancelBtn') {
-      console.log('hi');
       fetchData('/todos', access_token, 'GET').then(data => {
         setTodoList([...data].map(list => ({ ...list, modify: false })));
       });
