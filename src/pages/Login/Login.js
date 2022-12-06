@@ -25,7 +25,7 @@ const Login = () => {
     e.preventDefault();
 
     if (e.target.id === 'signup') {
-      fetchData('/auth/signup', token, 'POST', inputValue).then(res => {
+      fetchData('auth/signup', token, 'POST', inputValue).then(res => {
         if (res.statusCode === 400) {
           alert(res.message);
           setInputValue(prev => ({ ...prev, email: '', password: '' }));
@@ -36,7 +36,7 @@ const Login = () => {
     }
 
     if (e.target.id === 'signin') {
-      fetchData('/auth/signin', token, 'POST', inputValue).then(res => {
+      fetchData('auth/signin', token, 'POST', inputValue).then(res => {
         if (res.statusCode === 401) {
           alert('이메일 & 비밀번호를 확인해주세요.');
           setInputValue(prev => ({ ...prev, password: '' }));

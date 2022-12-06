@@ -1,7 +1,12 @@
+const PROXY = window.location.hostname === 'localhost' ? '' : '/proxy';
+
 const fetchData = (url, access_token, method, data) => {
+  const URL = `${PROXY}${url}`;
+  console.log(URL);
   //로그인&회원가입
+
   const postLoginResult = async () => {
-    const response = await fetch(url, {
+    const response = await fetch(URL, {
       method: method,
       headers: {
         'Access-Control-Allow-Origin': '*',
@@ -19,7 +24,7 @@ const fetchData = (url, access_token, method, data) => {
 
   // todos 데이터 가져오기 / 삭제하기
   const getTodoList = async () => {
-    const response = await fetch(url, {
+    const response = await fetch(URL, {
       method: method,
       headers: {
         'Access-Control-Allow-Origin': '*',
@@ -34,7 +39,7 @@ const fetchData = (url, access_token, method, data) => {
 
   //todos 추가 / 업데이트
   const addTodos = async () => {
-    const response = await fetch(url, {
+    const response = await fetch(URL, {
       method: method,
       headers: {
         'Access-Control-Allow-Origin': '*',
