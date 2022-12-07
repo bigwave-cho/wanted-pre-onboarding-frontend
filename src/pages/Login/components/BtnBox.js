@@ -23,25 +23,31 @@ const ButtonWrapper = styled.div`
   }
 
   #signup {
-    width: 100px;
+    width: 120px;
     height: 30px;
-    margin-right: 20px;
+    margin-right: 10px;
 
     &:hover {
       color: blue;
     }
-  }
-  #signin {
-    width: 200px;
-    height: 30px;
-    margin-left: 30px;
-    color: blue;
+
     &:disabled {
       color: lightgray;
     }
   }
+  #signin {
+    width: 190px;
+    height: 30px;
+    margin-left: 30px;
+    color: blue;
 
-  button:disabled {
+    &:hover {
+      color: blue;
+    }
+
+    &:disabled {
+      color: lightgray;
+    }
   }
 `;
 
