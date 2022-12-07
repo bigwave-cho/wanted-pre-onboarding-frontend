@@ -4,6 +4,10 @@
 # 1. 기능 시연 영상 링크
 
 ## ⭐️ 로그인 , 회원가입
+<a href="https://wantedtodoapp.netlify.app">투두 배포 사이트 링크</a>
+
+<a href="https://velog.io/@bigwave-cho/%EC%9B%90%ED%8B%B0%EB%93%9C-%ED%94%84%EB%A6%AC%EC%98%A8%EB%B3%B4%EB%94%A9-%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C-%EC%9D%B8%ED%84%B4%EC%8B%AD-%EC%B0%B8%EA%B0%80-%EC%97%90%EC%84%B8%EC%9D%B4-%EC%A1%B0%EC%9E%AC%ED%98%84">사전과제 회고 velog</a>
+
 
 [![시연영상 유튜브 링크](https://youtu.be/xe-nry29y70/0.jpg)](https://youtu.be/xe-nry29y70) 
 
