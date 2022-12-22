@@ -1,8 +1,8 @@
-// const PROXY = window.location.hostname === 'localhost' ? '' : '/proxy';
+const PROXY = window.location.hostname === 'localhost' ? '' : '/proxy';
 
 const fetchData = (url, access_token, method, data) => {
   // const URL = `${PROXY}${url}`;
-  const URL = `https://pre-onboarding-selection-task.shop${url}`;
+  const URL = `https://pre-onboarding-selection-task.shop${PROXY}${url}`;
   //로그인&회원가입
   const postLoginResult = async () => {
     const response = await fetch(URL, {
