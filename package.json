@@ -27,7 +27,6 @@
       "react-app/jest"
     ]
   },
-  "proxy": "https://pre-onboarding-selection-task.shop",
   "browserslist": {
     "production": [
       ">0.2%",
