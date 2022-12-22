@@ -1,14 +1,14 @@
 const PROXY = window.location.hostname === 'localhost' ? '' : '/proxy';
 
 const fetchData = (url, access_token, method, data) => {
-  const URL = `${PROXY}${url}`;
-
+  // const URL = `${PROXY}${url}`;
+  const URL = `https://pre-onboarding-selection-task.shop${url}`;
   //로그인&회원가입
   const postLoginResult = async () => {
     const response = await fetch(URL, {
       method: method,
       headers: {
-        'Access-Control-Allow-Origin': '*',
+        credentials: 'include',
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
@@ -26,7 +26,7 @@ const fetchData = (url, access_token, method, data) => {
     const response = await fetch(URL, {
       method: method,
       headers: {
-        'Access-Control-Allow-Origin': '*',
+        credentials: 'include',
         Authorization: `Bearer ${access_token}`,
       },
     });
@@ -41,7 +41,7 @@ const fetchData = (url, access_token, method, data) => {
     const response = await fetch(URL, {
       method: method,
       headers: {
-        'Access-Control-Allow-Origin': '*',
+        credentials: 'include',
         Authorization: `Bearer ${access_token}`,
         'Content-Type': 'application/json',
       },
