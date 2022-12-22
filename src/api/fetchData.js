@@ -1,4 +1,4 @@
-const PROXY = window.location.hostname === 'localhost' ? '' : '/proxy';
+// const PROXY = window.location.hostname === 'localhost' ? '' : '/proxy';
 
 const fetchData = (url, access_token, method, data) => {
   // const URL = `${PROXY}${url}`;
